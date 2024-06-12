@@ -64,13 +64,14 @@ class AuthenticationRepository extends GetxController {
       firebaseUser.value != null ? Get.offAll(() => const Dashboard()) : Get
           .to(() => WelcomeScreen());
     } on FirebaseAuthException catch (e) {
-      final ex = SignUpWithEmailAndPasswordFailure.code(e.code);
+      // final ex = SignUpWithEmailAndPasswordFailure.code(e.code);
       // print('FIREBASE AUTH EXCEPTION - ${ex.message}');
-      return ex.message;
+      // return ex.message;
+      return e.toString();
     } catch (_) {
-      const ex = SignUpWithEmailAndPasswordFailure();
-      print('EXCEPTION - ${ex.message}');
-      return ex.message;
+      // const ex = SignUpWithEmailAndPasswordFailure();
+      // print('EXCEPTION - ${ex.message}');
+      return e.toString();
     }
     return null;
   }
@@ -86,6 +87,7 @@ class AuthenticationRepository extends GetxController {
       // final ex = LogInWithEmailAndPasswordFailure();
       return e.toString();
     }
+    return null;
   }
 
   Future<void> logout() async => await _auth.signOut();

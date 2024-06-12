@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:login_flutter_app/src/constants/sizes.dart';
 import 'package:login_flutter_app/src/constants/text_strings.dart';
@@ -10,6 +11,7 @@ class OTPScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var otpController = Get.put(OTPController());
     var otp;
     return Scaffold(
       body: Container(

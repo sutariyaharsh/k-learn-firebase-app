@@ -2,6 +2,7 @@
 
 //--Generic Text
 const String tLogin = "Login";
+const String tLogout = "Logout";
 const String tSignup = "Signup";
 const String tFullName = "Full Name";
 const String tEmail = "E-Mail";
@@ -67,3 +68,21 @@ const String tDashboardBannerTitle2 = "JAVA";
 const String tDashboardBannerSubTitle = "10 Lessons";
 const String tDashboardButton = "View All";
 const String tDashboardTopCourses = "Top Courses";
+
+//--Profile Screen - Text
+const String tProfile = "Profile";
+const String tEditProfile = "Edit Profile";
+const String tLogoutDialogHeading = "Logout";
+const String tProfileHeading = "Coding with T";
+const String tProfileSubHeading = "superAdmin@codingwitht.com";
+//--Menu
+const String tMenu5 = tLogout;
+const String tMenu1 = "Settings";
+const String tMenu4 = "Information";
+const String tMenu2 = "Billing Details";
+const String tMenu3 = "User Management";
+
+//--Update Profile Screen - Text
+const String tDelete = "Delete";
+const String tJoined = "Joined";
+const String tJoinedAt = "12 June 2024";

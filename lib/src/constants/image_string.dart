@@ -25,3 +25,6 @@ const String tBookmarkIcon = "assets/images/dashboard/bookmark-icon.png";
 const String tBannerAndroidImage = "assets/images/dashboard/android-banner.png";
 const String tBannerJavaImage = "assets/images/dashboard/java-banner.png";
 const String tBannerFlutterImage = "assets/images/dashboard/flutter-banner.png";
+
+//--Profile Images
+const String tProfileImage = "assets/images/profile/profile-pic.jpg";
