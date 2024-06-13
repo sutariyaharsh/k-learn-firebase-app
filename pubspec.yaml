@@ -78,7 +78,7 @@ flutter:
     - assets/images/dashboard/
     - assets/images/forgot_password/
     - assets/images/on_boarding_images/
-    - assets/images/profile
+    - assets/images/profile/
     - assets/images/splash_images/
     - assets/images/welcome_images/
     - assets/logo/

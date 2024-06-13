@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:login_flutter_app/src/features/core/screens/profile/profile_screen.dart';
 
 import '../../../../../constants/colors.dart';
 import '../../../../../constants/image_string.dart';
@@ -26,9 +28,7 @@ class DashboardAppBar extends StatelessWidget implements PreferredSizeWidget{
           margin: const EdgeInsets.only(right: 20, top: 7),
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: tCardBgColor),
           child: IconButton(
-            onPressed: (){
-              AuthenticationRepository.instance.logout();
-            },
+            onPressed: () => Get.to(() => const ProfileScreen()),
             icon: const Image(image: AssetImage(tUserProfileImage)),),
         )
       ],
