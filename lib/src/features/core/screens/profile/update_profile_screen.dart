@@ -29,7 +29,7 @@ class UpdateProfileScreen extends StatelessWidget {
                     width: 120,
                     height: 120,
                     child: ClipRRect(
-                        borderRadius: BorderRadius.circular(100), child: Image(image: AssetImage(tProfileImage))),
+                        borderRadius: BorderRadius.circular(100), child: const Image(image: AssetImage(tProfileImage))),
                   ),
                   Positioned(
                     bottom: 0,
@@ -48,7 +48,62 @@ class UpdateProfileScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 50),
-
+              Form(child: Column(
+                children: [
+                  TextFormField(
+                    decoration: const InputDecoration(label: Text(tFullName), prefixIcon: Icon(LineAwesomeIcons.user),),
+                  ),
+                  const SizedBox(height: tFormHeight - 20,),
+                  TextFormField(
+                    decoration: const InputDecoration(label: Text(tEmail), prefixIcon: Icon(LineAwesomeIcons.envelope_1),),
+                  ),
+                  const SizedBox(height: tFormHeight - 20,),
+                  TextFormField(
+                    decoration: const InputDecoration(label: Text(tPhoneNo), prefixIcon: Icon(LineAwesomeIcons.phone),),
+                  ),
+                  const SizedBox(height: tFormHeight - 20,),
+                  TextFormField(
+                    decoration: const InputDecoration(label: Text(tPassword), prefixIcon: Icon(LineAwesomeIcons.fingerprint),),
+                  ),
+                  const SizedBox(height: tFormHeight),
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () => Get.to(() => const UpdateProfileScreen()),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: tPrimaryColor,
+                          side: BorderSide.none,
+                          shape: const StadiumBorder()),
+                      child: const Text(tEditProfile,
+                          style: TextStyle(color: tDarkColor)),
+                    ),
+                  ),
+                  const SizedBox(height: tFormHeight),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text.rich(
+                        TextSpan(
+                          text: tJoined,
+                          style: TextStyle(fontSize: 12),
+                          children: [
+                            TextSpan(text: tJoinedAt, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12))
+                          ],
+                        ),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {}, 
+                        style: ElevatedButton.styleFrom(backgroundColor: Colors.redAccent.withOpacity(0.1),
+                          elevation: 0,
+                          foregroundColor: Colors.red,
+                          shape: const StadiumBorder(),
+                          side: BorderSide.none,
+                        ),
+                        child: const Text(tDelete),),
+                    ],
+                  )
+                ],
+              ),),
             ],
           ),
         ),

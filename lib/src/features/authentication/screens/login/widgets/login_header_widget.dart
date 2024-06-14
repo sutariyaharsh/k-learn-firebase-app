@@ -21,7 +21,7 @@ class LoginHeaderWidget extends StatelessWidget {
             height: size.height * 0.2
         ),
         Text(tLogoTitle, style: Theme.of(context).textTheme.headlineSmall,),
-        Text(tLogoinSubTitle, style: Theme.of(context).textTheme.bodyLarge,),
+        Text(tLoginSubTitle, style: Theme.of(context).textTheme.bodyLarge,),
       ],
     );
   }

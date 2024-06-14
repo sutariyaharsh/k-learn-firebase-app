@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:login_flutter_app/src/constants/colors.dart';
@@ -20,7 +18,7 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         leading: IconButton(
-            onPressed: () {}, icon: const Icon(LineAwesomeIcons.angle_left)),
+            onPressed: () => Get.back(), icon: const Icon(LineAwesomeIcons.angle_left)),
         title: Text(tProfile, style: Theme.of(context).textTheme.headlineSmall),
         actions: [
           IconButton(
@@ -39,7 +37,7 @@ class ProfileScreen extends StatelessWidget {
                     width: 120,
                     height: 120,
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(100), child: Image(image: AssetImage(tProfileImage))),
+                      borderRadius: BorderRadius.circular(100), child: const Image(image: AssetImage(tProfileImage))),
                   ),
                   Positioned(
                     bottom: 0,
@@ -82,27 +80,27 @@ class ProfileScreen extends StatelessWidget {
               ProfileMenuWidget(
                   title: 'Settings',
                   icon: LineAwesomeIcons.cog,
-                  onPresss: () {}),
+                  onPress: () {}),
               ProfileMenuWidget(
                   title: 'Billing Details',
                   icon: LineAwesomeIcons.wallet,
-                  onPresss: () {}),
+                  onPress: () {}),
               ProfileMenuWidget(
                   title: 'User Management',
                   icon: LineAwesomeIcons.user_check,
-                  onPresss: () {}),
+                  onPress: () {}),
               const Divider(color: Colors.grey),
               const SizedBox(height: 10),
               ProfileMenuWidget(
                   title: 'Information',
                   icon: LineAwesomeIcons.info,
-                  onPresss: () {}),
+                  onPress: () {}),
               ProfileMenuWidget(
                   title: 'Logout',
                   icon: LineAwesomeIcons.alternate_sign_out,
                   textColor: Colors.red,
                   endIcon: false,
-                  onPresss: () {}),
+                  onPress: () {}),
             ],
           ),
         ),

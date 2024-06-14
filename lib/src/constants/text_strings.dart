@@ -21,8 +21,8 @@ const String tOnBoardingTitle1 = "Build Awesome Apps";
 const String tOnBoardingTitle2 = "Learn from YouTube";
 const String tOnBoardingTitle3 = "Get Code & Resources";
 const String tOnBoardingSubTitle1 = "Let's start your journey with us on this amazing and easy platform.";
-const String tOnBoardingSubTitle2 = "Get video Tutorials of each topic to learn thimgs easily.";
-const String tOnBoardingSubTitle3 = "Save time by just aopy pasting complete apps learn from video.";
+const String tOnBoardingSubTitle2 = "Get video Tutorials of each topic to learn things easily.";
+const String tOnBoardingSubTitle3 = "Save time by just copy pasting complete apps learn from video.";
 const String tOnBoardingCounter1 = "1/3";
 const String tOnBoardingCounter2 = "2/3";
 const String tOnBoardingCounter3 = "3/3";
@@ -33,7 +33,7 @@ const String tWelcomeSubTitle = "Let's put your creativity on the development hi
 
 //--Login Screen Text
 const String tLogoTitle = "Welcome Back,";
-const String tLogoinSubTitle = "Make it work, make it right, make it fast.";
+const String tLoginSubTitle = "Make it work, make it right, make it fast.";
 const String tRememberMe = "Remember Me?";
 const String tDontHaveAnAccount = "Don't have an Account? ";
 
@@ -60,7 +60,7 @@ const String tOtpSubTitle = "Verification";
 const String tOtpMessage = "Enter the verification code sent at ";
 
 //--Dashboard Screen - Text
-const String tDashboardTitle = "Hey, Coading with T";
+const String tDashboardTitle = "Hey, Coding with T";
 const String tDashboardHeading = "Explore Courses";
 const String tDashboardSearch = "Search...";
 const String tDashboardBannerTitle1 = "Android for Beginners";
@@ -84,5 +84,5 @@ const String tMenu3 = "User Management";
 
 //--Update Profile Screen - Text
 const String tDelete = "Delete";
-const String tJoined = "Joined";
+const String tJoined = "Joined ";
 const String tJoinedAt = "12 June 2024";

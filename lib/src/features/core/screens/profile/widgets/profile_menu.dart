@@ -8,14 +8,14 @@ class ProfileMenuWidget extends StatelessWidget {
     Key? key,
     required this.title,
     required this.icon,
-    required this.onPresss,
+    required this.onPress,
     this.endIcon = true,
     this.textColor,
   }) : super(key: key);
 
   final String title;
   final IconData icon;
-  final VoidCallback onPresss;
+  final VoidCallback onPress;
   final bool endIcon;
   final Color? textColor;
 
@@ -26,7 +26,7 @@ class ProfileMenuWidget extends StatelessWidget {
     var iconColor = isDark ? tPrimaryColor : tAccentColor;
 
     return ListTile(
-      onTap: onPresss,
+      onTap: onPress,
       leading: Container(
         width: 40,
         height: 40,
