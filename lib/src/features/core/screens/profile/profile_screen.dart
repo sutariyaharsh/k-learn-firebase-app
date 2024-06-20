@@ -5,6 +5,7 @@ import 'package:login_flutter_app/src/constants/colors.dart';
 import 'package:login_flutter_app/src/constants/image_string.dart';
 import 'package:login_flutter_app/src/constants/sizes.dart';
 import 'package:login_flutter_app/src/constants/text_strings.dart';
+import 'package:login_flutter_app/src/features/authentication/screens/welcome/welcome_screen.dart';
 import 'package:login_flutter_app/src/features/core/screens/profile/update_profile_screen.dart';
 import 'package:login_flutter_app/src/features/core/screens/profile/widgets/profile_menu.dart';
 
@@ -18,7 +19,7 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         leading: IconButton(
-            onPressed: () => Get.back(), icon: const Icon(LineAwesomeIcons.angle_left)),
+            onPressed: () => Get.back(), icon: const Icon(LineAwesomeIcons.angle_left_solid)),
         title: Text(tProfile, style: Theme.of(context).textTheme.headlineSmall),
         actions: [
           IconButton(
@@ -47,7 +48,7 @@ class ProfileScreen extends StatelessWidget {
                       height: 35,
                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(100), color: tPrimaryColor),
                       child: const Icon(
-                        LineAwesomeIcons.alternate_pencil,
+                        LineAwesomeIcons.pencil_alt_solid,
                         color: Colors.black,
                         size: 20),
                     ),
@@ -79,28 +80,30 @@ class ProfileScreen extends StatelessWidget {
               /// Menu
               ProfileMenuWidget(
                   title: 'Settings',
-                  icon: LineAwesomeIcons.cog,
+                  icon: LineAwesomeIcons.cog_solid,
                   onPress: () {}),
               ProfileMenuWidget(
                   title: 'Billing Details',
-                  icon: LineAwesomeIcons.wallet,
+                  icon: LineAwesomeIcons.wallet_solid,
                   onPress: () {}),
               ProfileMenuWidget(
                   title: 'User Management',
-                  icon: LineAwesomeIcons.user_check,
+                  icon: LineAwesomeIcons.user_check_solid,
                   onPress: () {}),
               const Divider(color: Colors.grey),
               const SizedBox(height: 10),
               ProfileMenuWidget(
                   title: 'Information',
-                  icon: LineAwesomeIcons.info,
+                  icon: LineAwesomeIcons.info_solid,
                   onPress: () {}),
               ProfileMenuWidget(
                   title: 'Logout',
-                  icon: LineAwesomeIcons.alternate_sign_out,
+                  icon: LineAwesomeIcons.sign_out_alt_solid,
                   textColor: Colors.red,
                   endIcon: false,
-                  onPress: () {}),
+                  // onPress: () {}
+                  onPress: () => Get.to(() => const WelcomeScreen()),
+              ),
             ],
           ),
         ),

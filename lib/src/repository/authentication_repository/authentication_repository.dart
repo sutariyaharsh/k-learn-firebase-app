@@ -24,11 +24,21 @@ class AuthenticationRepository extends GetxController {
 
   //Setting initial screen onLOAD
   _setInitialScreen(User? user) {
-    user == null ? Get.offAll(() => const WelcomeScreen()) : Get
-        .offAll(() => const Dashboard());
+    user == null ? Get.offAll(() => const WelcomeScreen()) : Get.offAll(() => const Dashboard());
   }
 
-  //FUNC
+  /// Phone Authentication
+  loginWithPhoneNo(String phoneNumber) async {
+    try {
+      await _auth.signInWithPhoneNumber(phoneNumber);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'invalid-phone-number') {
+        Get.snackbar("Error", "Invalid Phone No");
+      }
+    } catch (_) {
+      Get.snackbar("Error", "Somthing went wrong.");
+    }
+  }
   Future<void> phoneAuthentication(String phoneNo) async {
     await _auth.verifyPhoneNumber(
       phoneNumber: phoneNo,

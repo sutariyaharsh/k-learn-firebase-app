@@ -44,7 +44,7 @@ class ProfileMenuWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(100),
             color: Colors.grey.withOpacity(0.1),
           ),
-          child: const Icon(LineAwesomeIcons.angle_right, size: 18.0, color: Colors.grey)) : null,
+          child: const Icon(LineAwesomeIcons.angle_right_solid, size: 18.0, color: Colors.grey)) : null,
     );
   }
 }
