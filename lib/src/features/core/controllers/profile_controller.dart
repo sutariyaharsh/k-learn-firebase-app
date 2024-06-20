@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:login_flutter_app/src/repository/authentication_repository/authentication_repository.dart';
 import 'package:login_flutter_app/src/repository/user_repository/user_repository.dart';
@@ -7,6 +8,7 @@ import '../../authentication/models/user_model.dart';
 class ProfileController extends GetxController {
   static ProfileController get instance => Get.find();
 
+  /// Repositories
   final _authRepo = Get.put(AuthenticationRepository());
   final _userRepo = Get.put(UserRepository());
 
@@ -20,7 +22,10 @@ class ProfileController extends GetxController {
     }
   }
 
-  Future<List<UserModel>> getAllUser() async {
-    return await _userRepo.allUsers();
+  /// Fetch List of user records.
+  Future<List<UserModel>> getAllUser() async => await _userRepo.allUsers();
+
+  updateRecord(UserModel user) async {
+    await _userRepo.updateUserRecord(user);
   }
 }
