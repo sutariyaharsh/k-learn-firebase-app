@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:login_flutter_app/src/features/authentication/screens/welcome/welcome_screen.dart';
@@ -8,7 +7,7 @@ import 'package:login_flutter_app/src/features/core/screens/dashboard/dashboard.
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
 
-  //Varibales
+  // Variables
   final _auth = FirebaseAuth.instance;
   late final Rx<User?> firebaseUser;
   var verificationId = ''.obs;
@@ -35,7 +34,7 @@ class AuthenticationRepository extends GetxController {
         Get.snackbar("Error", "Invalid Phone No");
       }
     } catch (_) {
-      Get.snackbar("Error", "Somthing went wrong.");
+      Get.snackbar("Error", "Something went wrong.");
     }
   }
 
@@ -55,7 +54,7 @@ class AuthenticationRepository extends GetxController {
         if (e.code == 'invalid-phone-number') {
           Get.snackbar('Error', 'The provided phone number is not valid.');
         } else {
-          Get.snackbar('Error', 'Somthing went wrong. Try again.');
+          Get.snackbar('Error', 'Something went wrong. Try again.');
         }
       },
     );
@@ -66,6 +65,7 @@ class AuthenticationRepository extends GetxController {
     return credentials.user != null ? true : false;
   }
 
+  /// [EmailAuthentication] - REGISTER
   Future<String?> createUserWithEmailAndPassword(String email, String password) async {
     try {
       UserCredential userCredential = await _auth.createUserWithEmailAndPassword(email: email, password: password);
@@ -84,6 +84,7 @@ class AuthenticationRepository extends GetxController {
     return null;
   }
 
+  /// [EmailAuthentication] - LOGIN
   Future<String?> loginUserWithEmailAndPassword(String email, String password) async {
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
