@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,7 +15,12 @@ class UserRepository extends GetxController {
 
   /// Store user in FireStore
   Future<void> createUser(UserModel user) async {
-    await _db.collection("Users").add(user.toJson()).whenComplete(() {
+    await _db.collection("Users").add(user.toJson()).then((docRef) {
+      // Save the document ID
+      user.id = docRef.id;
+      // Optionally, update the user document to include the document ID
+      docRef.update({'id': user.id});
+
       Get.snackbar(
         "Success",
         "Your account has been created.",
@@ -33,7 +40,11 @@ class UserRepository extends GetxController {
   /// Step 2 - Fetch All Users OR User details
   Future<UserModel> getUserDetails(String email) async {
     final snapshot = await _db.collection("Users").where("Email", isEqualTo: email).get();
-    final userData = snapshot.docs.map((e) => UserModel.fromSnapshot(e)).single;
+    final userData = snapshot.docs.map((doc) {
+      final user = UserModel.fromSnapshot(doc);
+      user.id = doc.id;  // Capture the document ID
+      return user;
+    }).single;
     return userData;
   }
 
@@ -44,6 +55,13 @@ class UserRepository extends GetxController {
   }
 
   Future<void> updateUserRecord(UserModel user) async {
-    await _db.collection("Users").doc(user.id).update(user.toJson());
+    if (user.id == null || user.id!.isEmpty) {
+      log("Error: Document ID is null or empty", name: "Error");
+      return;
+    }
+
+    await _db.collection("Users").doc(user.id).update(user.toJson()).catchError((error) {
+      log("$error", name: "Error");
+    });
   }
 }

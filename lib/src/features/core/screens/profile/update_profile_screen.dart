@@ -112,6 +112,7 @@ class UpdateProfileScreen extends StatelessWidget {
                               child: ElevatedButton(
                                 onPressed: () async {
                                   final userData = UserModel(
+                                    id: user.id,
                                     email: email.text.trim(),
                                     password: password.text.trim(),
                                     fullName: fullName.text.trim(),
